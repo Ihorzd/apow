@@ -1,0 +1,19 @@
+.menu{
+    display: flex;
+    justify-content: center;
+    width: 64px;
+    height: 100vh;
+    background-color: #003367;
+   .menuItems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+        width: 24px;
+        height: 24px;
+        margin-top: 26px;
+        
+    }
+   }
+    
+}
