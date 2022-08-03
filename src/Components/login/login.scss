@@ -1,19 +1,123 @@
-.login{
+.login {
     display: flex;
-    
-    .loginImgContainer{
+    height: 100vh;
+
+    .loginImgContainer {
         display: flex;
         flex: 1;
         flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: #E5E5E5;
 
-        justify-content: center;        
-        img{
-            width:80% ;
+        h3 {
+            width: 370px;
+            height: 32px;
+            left: 215px;
+            top: 199px;
+
+
+            font-style: normal;
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 32px;
+            /* identical to box height, or 80% */
+
+            text-align: center;
+            text-transform: uppercase;
+
+            color: #003367;
+
+            -webkit-text-stroke: 1px solid #000000;
+
+
+        }
+
+        img {
+            width: 80%;
         }
     }
-    .loginTxtContainer{
+
+    .loginTxtContainer {
         display: flex;
         flex: 1;
-        flex-direction:column
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 3vw;
+
+        .loginTxtContainer__content {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            h4 {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 32px;
+                text-align: left;
+
+                color: #003367;
+            }
+
+            p {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: left;
+                color: #95A2A7;
+            }
+
+            input {
+                border: none;
+                border-bottom: 1px solid black;
+            }
+
+            button {
+                width: 117px;
+                height: 36px;
+                margin-top: 24px;
+                background: #003367;
+                border-radius: 4px;
+                border: none;
+                color: white;
+                align-self: flex-end;
+
+            }
+        }
+
+    }
+
+    .copyrigtht {
+
+        position: absolute;
+
+        bottom: 0;
+
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        width: 223px;
+        height: 15px;
+
+
+        /* Caption */
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height, or 125% */
+
+        text-align: center;
+        letter-spacing: 0.4px;
+
+        /* Grey */
+
+        color: #95A2A7
     }
 }
