@@ -6,8 +6,7 @@ import './mainPage.scss'
 const MainPage: FC = () => {
     return (
         <div className="mainPage">
-            <Menu/>
-            <Dashboard/>
+         
         </div>
     )
 }

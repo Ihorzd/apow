@@ -1,0 +1,77 @@
+
+.dashboardContainer{
+   display: flex;
+    .dashboard{
+        display:flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .comingSoon{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    
+            .comingSoon__img{
+                width: 598px;
+                height: 455px;
+            }
+            .comingSoon__txt{
+                font-weight: 300;
+                font-size: 40px;
+                line-height: 32px;
+    /* identical to box height, or 80% */
+    
+                text-align: center;
+                text-transform: uppercase;
+    
+                color: #003367;
+            }
+        }
+        .btnContainer{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            .btnContainer__editProfile{
+                width: 305px;
+                height: 36px;
+    /* Button */
+    
+    
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+    /* identical to box height, or 129% */
+    
+     
+                letter-spacing: 1.25px;
+                text-transform: uppercase;
+    
+                background: #003367;
+                border-radius: 4px;
+                border: none;
+    
+    /* White */
+    
+                color: #FFFFFF;
+               
+    
+    
+            }
+            .btnContainer_logout{
+                width: 92px;
+                height: 36px;
+                margin-top: 16px;
+                border: none;
+                background: #FFFFFF;
+                border-radius: 4px;
+                color: #003367;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+}
