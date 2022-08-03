@@ -1,7 +1,19 @@
 .login{
     display: flex;
-    background-color: aqua;
+    
     .loginImgContainer{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
 
+        justify-content: center;        
+        img{
+            width:80% ;
+        }
+    }
+    .loginTxtContainer{
+        display: flex;
+        flex: 1;
+        flex-direction:column
     }
 }
