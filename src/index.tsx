@@ -8,12 +8,17 @@ import Login from './Components/login/Login';
 import MainPage from './Components/mainPage/MainPage';
 import Profile from './Components/profile/Profile';
 import Dashboard from './Components/dashboard/Dashboard';
+import { Provider } from 'react-redux';
+import { setupStore } from './store/store';
+
+const store = setupStore();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login/>}/>
@@ -22,6 +27,8 @@ root.render(
     </Routes>
     <App />
     </BrowserRouter>
+    </Provider>
+    
     
   </React.StrictMode>
 );

@@ -3,5 +3,93 @@
     flex-direction: row;
     .profile{
         display: flex;
+        flex-direction: column;
+        margin-left: 36px;
+        .profile__header{
+            width: 110px;
+            height: 32px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+          
+/* identical to box height, or 133% */
+
+
+            color: #003367;
+        }
+        .gtneralInfo{
+            width: 1480px;
+            height: 285px;
+            background: #FFFFFF;
+/* Grey light */
+
+            border: 1px solid #EBEEEF;
+            border-radius: 4px;
+            .gtneralInfo__header{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 32px;
+    /* identical to box height, or 160% */
+                width: 110px;
+                height: 32px;
+                margin-left: 20px;
+    
+                color: #003367;
+            }
+            #generalForm{
+                display:flex ;
+                margin-left: 20px;
+                flex-wrap: wrap;
+                width: 1095px;
+                input{
+                    padding-left: 0;
+                }
+                .generalForm__item{
+                    width: 223px;
+                    height: 55px;
+                    margin-right: 20px;
+                    input{
+                        width: 100%;
+                        border: none;
+                        border-bottom:1px solid #EBEEEF ;
+                    }
+                }
+                .generalForm__item_date{
+                    width: 223px;
+                    margin-right: 330px;
+                    input{
+                     height: 32px;
+                    }
+                }
+                .generalForm__item_phone,
+                .generalForm__item_personalEmail{
+                    width: 345px;
+                }
+                .generalForm__item_email{
+                    width: 325px;
+                }
+                .generalForm__item_absences{
+                    width: 108px;
+                }
+                .generalForm__item_checkTeamMember{
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                    .ant-checkbox-checked{
+                        .ant-checkbox-inner{
+                            background-color: #003367;
+                            border: #003367;
+                        }
+                    }
+                  
+                    
+                }
+            }
+            
+
+        }
+        
     }
 }
