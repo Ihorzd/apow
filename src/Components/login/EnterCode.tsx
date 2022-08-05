@@ -1,5 +1,6 @@
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { FC, useEffect, useState } from "react";
+import {  useNavigate } from 'react-router-dom';
 import OtpInput from "./OtpInput";
 import './enterCode.scss'
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
@@ -8,31 +9,33 @@ import { fetchCode } from "../../store/redusers/ActionCreators";
 const EnterCode: FC = () => {
 
     const dispatch = useAppDispatch();
-    const {email} = useAppSelector(state => state.emailReduser)
-
+    const {email, isAuthorizeCode} = useAppSelector(state => state.emailReduser)
+    
+   const navigate = useNavigate()
     const [otp, setOtp] = useState('');
     const onChange = (value: string) => setOtp(value);
     
     const postCode = () => {
         const data={
-            email: "demo@demo.com",
-            code: "111111",
+            email: email,
+            code: otp,
             languageID: "string"
         }
-        console.log(otp)
+        
         dispatch(fetchCode(data))
     }
-
-    useEffect(() => {
+    if(isAuthorizeCode){
+        navigate('/dashboard')
         
-    }, [otp])
+    }
+
     return (
         <>
-        
-            <div className="warningMessage">
+        {(otp.length ===5 )?  (<div className="warningMessage">
                 <ExclamationCircleOutlined style={{color:'#AF2727'}} className="exclamationMark" />
                 <h5 className="warningMessage__text">Please enter a valid code</h5>
-            </div>
+            </div>):null}
+
             <p>To finalize your verification, please enter the code that
                 has been sent to your email address / SMS</p>
             <OtpInput value={otp} valueLength={6} onChange={onChange} />

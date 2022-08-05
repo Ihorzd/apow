@@ -34,8 +34,22 @@ export const fetchEmail = (email:string) => async (dispatch:AppDispatch) => {
 export const fetchCode =(data:any) => async (dispatch:AppDispatch) => {
     try{
         const response = await axios.post(`${APP_URL}api/Accounts/LoginWithCode`,data);
-        console.log('uhkl')
+        if(response.status === 200)dispatch(loginSlice.actions.codeAuth())
+        
+        localStorage.setItem('token', JSON.stringify(response.data.jwt.token))
+        localStorage.setItem('refreshToken', JSON.stringify(response.data.jwt.token))
     } catch(e){
-        console.log(e)
+        dispatch(loginSlice.actions.codeNotAuth())
     }
 } 
+
+export const fetchLogout = () =>  async (dispatch: AppDispatch) => {
+    try{
+        await axios.post(`${APP_URL}api/Accounts/Logout`,{});
+        localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
+
+    }catch{
+
+    }
+}

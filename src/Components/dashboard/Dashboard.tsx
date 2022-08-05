@@ -1,9 +1,18 @@
 import { FC } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks/redux";
+import { fetchLogout } from "../../store/redusers/ActionCreators";
 import Menu from "../Menu/Menu";
 
 import "./dashboar.scss";
 
 const Dashboard: FC = () => {
+  const navigation = useNavigate()
+  const dispatch = useAppDispatch();
+  const logOut = () =>{
+    dispatch(fetchLogout);
+    navigation('/')
+  }
   return (
     <div className="dashboardContainer">
       <Menu />
@@ -13,10 +22,15 @@ const Dashboard: FC = () => {
           <h3 className="comingSoon__txt">COOMING SOON</h3>
         </div>
         <div className="btnContainer">
+          <Link to='/profile'>
           <button className="btnContainer__editProfile">
             <span>EDIT MY PROFILE AND MY WORKLOG</span>
           </button>
-          <button className="btnContainer_logout">LOGOUT</button>
+          </Link>
+          
+          <button className="btnContainer_logout"
+          onClick={()=> logOut()}
+          >LOGOUT</button>
         </div>
       </div>
     </div>

@@ -5,12 +5,14 @@ interface emailState{
     isLoading: boolean;
     error: string;
     isAuthorizeEmail:boolean;
+    isAuthorizeCode:boolean;
  
 };
 const initialState: emailState = {
     email:'',
     isLoading:false,
     isAuthorizeEmail:false,
+    isAuthorizeCode:false,
     error:''
     
 }
@@ -25,6 +27,12 @@ export const loginSlice = createSlice({
         },
         emailAuthorizeEmail(state){
             state.isAuthorizeEmail = true
+        },
+        codeAuth(state){
+            state.isAuthorizeCode = true
+        },
+        codeNotAuth(state){
+            state.isAuthorizeCode = false
         }
     }
 })
