@@ -1,0 +1,16 @@
+.warningMessage{
+    display: flex;
+    width: 100%;
+    background: rgba( hsl(0, 64%, 42%), 0.2);
+    align-items: center;
+    border-radius: 4px;
+    padding-left: 8px;
+    margin-bottom: 16px; 
+    .warningMessage__text{
+        display: flex;
+        margin-top: 5px;
+        margin-left: 10px;
+       color: #AF2727 ;
+     
+    }
+}

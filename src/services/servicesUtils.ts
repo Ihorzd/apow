@@ -1,0 +1,1 @@
+export const APP_URL = 'https://azapp-playground-demo-api.azurewebsites.net/'

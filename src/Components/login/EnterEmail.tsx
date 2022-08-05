@@ -1,10 +1,16 @@
 import { FC } from "react";
 
-const EnterEmail: FC = () => {
+interface Props{
+    handleEmail:(e:string)=>void,
+    postEmail:() => void
+}
+
+const EnterEmail = ({handleEmail, postEmail}:Props) => {
     return (
         <>
             <p>Enter your email </p>
-            <input />
+            <input onChange={e=>handleEmail(e.target.value)}/>
+            <button onClick={()=> postEmail()}>SEND CODE</button>
         </>
     )
 }

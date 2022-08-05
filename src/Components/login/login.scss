@@ -44,13 +44,14 @@
         flex: 1;
         flex-direction: column;
         justify-content: center;
-        padding-left: 3vw;
+        
 
         .loginTxtContainer__content {
             display: flex;
             flex-direction: column;
-            width: 50%;
-
+            width: 370px;
+            margin-left: 115px;
+            
             h4 {
                 font-style: normal;
                 font-weight: 500;
@@ -70,6 +71,7 @@
                 text-align: left;
                 color: #95A2A7;
             }
+          
 
             input {
                 border: none;
@@ -80,6 +82,7 @@
                 width: 117px;
                 height: 36px;
                 margin-top: 24px;
+                margin-bottom: 24px;
                 background: #003367;
                 border-radius: 4px;
                 border: none;
