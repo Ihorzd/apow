@@ -33,12 +33,8 @@ const Profile: FC = () => {
     const onFinishFailed = () => {
         message.error('Submit failed!');
     };
-    const config = {
-        rules: [{ type: 'object' as const, required: true, message: 'Please select time!' }],
-    };
-    const myFunc = () =>{
-       
-    }
+
+
     useEffect(()=>{
         dispatch(getUserInfo())
     },[])
@@ -48,7 +44,7 @@ const Profile: FC = () => {
         <div className='profileContainer'>
             <Menu />
             <div className='profile'>
-                <button onClick={()=>myFunc()}>info</button>
+               
                 <h3 className="profile__header">My Profile</h3>
                 <div className="gtneralInfo">
                     <h4 className="gtneralInfo__header">General Info</h4>
