@@ -32,7 +32,9 @@ export const loginSlice = createSlice({
             state.isAuthorizeCode = true
         },
         codeNotAuth(state){
-            state.isAuthorizeCode = false
+            state.isAuthorizeCode = false;
+            state.isAuthorizeEmail = false;
+            console.log('cpmpleted')
         }
     }
 })

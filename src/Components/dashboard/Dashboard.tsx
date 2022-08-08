@@ -1,18 +1,27 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchLogout } from "../../store/redusers/ActionCreators";
 import Menu from "../Menu/Menu";
 
 import "./dashboar.scss";
 
 const Dashboard: FC = () => {
-  const navigation = useNavigate()
+  const {isAuthorizeCode} = useAppSelector(state => state.emailReduser)
+  const navigate = useNavigate()
   const dispatch = useAppDispatch();
   const logOut = () =>{
-    dispatch(fetchLogout);
-    navigation('/')
+    dispatch(fetchLogout());
+    console.log(isAuthorizeCode)
+    
   }
+
+    useEffect(()=>{
+        if(!isAuthorizeCode){
+          navigate('/')
+            
+        }
+    },[isAuthorizeCode])
   return (
     <div className="dashboardContainer">
       <Menu />

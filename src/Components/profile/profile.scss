@@ -1,95 +1,167 @@
-.profileContainer{
+
+@mixin headersProfile {
+    font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 32px;
+                /* identical to box height, or 160% */
+                width: 110px;
+                height: 32px;
+                margin-left: 20px;
+
+                color: #003367;
+}
+
+@mixin borderBox{
+    width: 1480px;
+            height: 285px;
+            background: #FFFFFF;
+            /* Grey light */
+
+            border: 1px solid #EBEEEF;
+            border-radius: 4px;
+}
+
+.profileContainer {
     display: flex;
     flex-direction: row;
-    .profile{
+
+    .profile {
         display: flex;
         flex-direction: column;
         margin-left: 36px;
-        .profile__header{
+
+        .profile__header {
             width: 110px;
             height: 32px;
             font-style: normal;
             font-weight: 500;
             font-size: 24px;
             line-height: 32px;
-          
-/* identical to box height, or 133% */
+
+            /* identical to box height, or 133% */
 
 
             color: #003367;
         }
-        .gtneralInfo{
-            width: 1480px;
-            height: 285px;
-            background: #FFFFFF;
-/* Grey light */
 
-            border: 1px solid #EBEEEF;
-            border-radius: 4px;
-            .gtneralInfo__header{
-                font-style: normal;
-                font-weight: 500;
-                font-size: 20px;
-                line-height: 32px;
-    /* identical to box height, or 160% */
-                width: 110px;
-                height: 32px;
-                margin-left: 20px;
-    
-                color: #003367;
+        .gtneralInfo {
+           @include borderBox();
+
+            .gtneralInfo__header {
+                @include headersProfile();
             }
-            #generalForm{
-                display:flex ;
-                margin-left: 20px;
-                flex-wrap: wrap;
-                width: 1095px;
-                input{
-                    padding-left: 0;
+
+            .generalFormContainer {
+                display: flex;
+
+                [title] {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 15px;
+                    /* identical to box height, or 125% */
+
+                    letter-spacing: 0.4px;
+
+                    /* Grey */
+
+                    color: #95A2A7;
+
                 }
-                .generalForm__item{
-                    width: 223px;
-                    height: 55px;
-                    margin-right: 20px;
-                    input{
-                        width: 100%;
-                        border: none;
-                        border-bottom:1px solid #EBEEEF ;
-                    }
-                }
-                .generalForm__item_date{
-                    width: 223px;
-                    margin-right: 330px;
-                    input{
-                     height: 32px;
-                    }
-                }
-                .generalForm__item_phone,
-                .generalForm__item_personalEmail{
-                    width: 345px;
-                }
-                .generalForm__item_email{
-                    width: 325px;
-                }
-                .generalForm__item_absences{
-                    width: 108px;
-                }
-                .generalForm__item_checkTeamMember{
+
+                #generalForm {
                     display: flex;
-                    justify-content: center;
-                    align-items: end;
-                    .ant-checkbox-checked{
-                        .ant-checkbox-inner{
-                            background-color: #003367;
-                            border: #003367;
+                    margin-left: 20px;
+                    flex-wrap: wrap;
+                    width: 1095px;
+
+                    input {
+                        padding-left: 0;
+                    }
+
+                    .generalForm__item {
+                        width: 223px;
+                        height: 55px;
+                        margin-right: 20px;
+
+                        input {
+                            width: 100%;
+                            border: none;
+                            border-bottom: 1px solid #EBEEEF;
                         }
                     }
-                  
-                    
+
+                    .generalForm__item_date {
+                        width: 223px;
+                        margin-right: 330px;
+
+                        input {
+                            height: 32px;
+                        }
+                    }
+
+                    .generalForm__item_phone,
+                    .generalForm__item_personalEmail {
+                        width: 345px;
+                    }
+
+                    .generalForm__item_email {
+                        width: 325px;
+                    }
+
+                    .generalForm__item_absences {
+                        width: 108px;
+                    }
+
+                    .generalForm__item_checkTeamMember {
+                        display: flex;
+                        justify-content: center;
+                        align-items: end;
+
+                        .ant-checkbox-checked {
+                            .ant-checkbox-inner {
+                                background-color: #003367;
+                                border: #003367;
+                            }
+                        }
+
+
+                    }
                 }
+
+                .accounts {
+                    width: 380px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 32px;
+                    /* identical to box height, or 200% */
+
+
+                    color: #003367;
+
+                    .myAccounts__input {
+                        width: 345px;
+                        border: none;
+                        border-bottom: 1px solid #EBEEEF;
+                        padding-left: 0;
+                    }
+                }
+
             }
+
             
 
+
+
         }
-        
+        .workLogs {
+            @include borderBox();
+            margin-top: 20px;
+            .workLogs__header {
+                @include headersProfile();
+                margin-top: 16px;
+            }
+        }
+
     }
 }

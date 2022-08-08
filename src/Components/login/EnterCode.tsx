@@ -24,17 +24,20 @@ const EnterCode: FC = () => {
         
         dispatch(fetchCode(data))
     }
-    if(isAuthorizeCode){
-        navigate('/dashboard')
-        
-    }
+    useEffect(()=>{
+        if(isAuthorizeCode){
+            navigate('/dashboard')
+            
+        }
+    },[isAuthorizeCode])
+    
 
     return (
         <>
-        {(otp.length ===5 )?  (<div className="warningMessage">
+        {(otp.length ===0 || otp.length ===6)? null:(<div className="warningMessage">
                 <ExclamationCircleOutlined style={{color:'#AF2727'}} className="exclamationMark" />
                 <h5 className="warningMessage__text">Please enter a valid code</h5>
-            </div>):null}
+            </div>)}
 
             <p>To finalize your verification, please enter the code that
                 has been sent to your email address / SMS</p>
